@@ -1,5 +1,5 @@
 {
-  "name": "@hodgef/ts-library-boilerplate-basic",
+  "name": "my-notification-lib-ts",
   "version": "1.1.207",
   "description": "Typescript Minimal Starter Kit for building libraries",
   "main": "build/index.js",
@@ -14,15 +14,10 @@
     "trypublish": "npm publish || true"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/hodgef/ts-library-boilerplate-basic"
+    "type": "git"
   },
   "author": "Francisco Hodge <hello@franciscohodge.com> (https://github.com/hodgef)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hodgef/ts-library-boilerplate-basic/issues"
-  },
-  "homepage": "https://github.com/hodgef/ts-library-boilerplate-basic",
   "keywords": [
     "library",
     "starter",
@@ -73,5 +68,8 @@
       "jsx",
       "node"
     ]
+  },
+  "dependencies": {
+    "websocket-ts": "^1.1.1"
   }
 }

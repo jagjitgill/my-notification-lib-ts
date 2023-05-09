@@ -1,8 +1,17 @@
-import MyLibrary from "../lib";
-const myLibraryInstance = new MyLibrary();
+import { WSNotificationClient } from "../lib";
+import { Log } from "../lib/utils/Logger";
 
-document.querySelector("body").innerHTML = `<h1>Hello World!</h1>`;
+Log.setLogger(console);
+Log.setLevel(Log.DEBUG)
 
-console.log("myLibraryInstance", myLibraryInstance);
+const myLibraryInstance = new WSNotificationClient({
+  webSocketRemote: "wss://socketsbay.com/wss/v2/1/demo/",
+});
 
-myLibraryInstance.myMethod(); 
+myLibraryInstance.connect();
+myLibraryInstance.events.addMessageReceived((data) => {
+  console.log("Callback called with ", data);
+  //   let div = document.createElement("div");
+  //   div.textContent(data ?? '-');
+  document.querySelector("body")?.append(`Message: ${data}` ?? "");
+});
